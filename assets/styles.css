@@ -1,5 +1,5 @@
 body {
-  background-color: lightsteelblue;
+  background-color: rgb(210, 219, 231);
 }
 
 #header {
@@ -13,7 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   float: right;
   width: 800px;
-  height: 400px;
+  height: 300px;
   max-width: 80%;
   background-color: white;
   border-radius: 5px;
@@ -71,7 +71,8 @@ button {
 }
 #week{
     margin-top: 5px;
-    float:right;  
+    float:right; 
+  
 }
 h4{
   margin-left: 5px;
@@ -79,4 +80,31 @@ h4{
 .card{
   background-color: blue;
   color: white;
+}
+
+.green{
+  background-color: greenyellow;
+}
+.red{
+  background-color: red;
+  width:100px;
+}
+.orange{
+  background-color: orange;
+}
+.yellow{
+  background-color: yellow;
+  color:black
+}
+.card-text{
+  font-size: 14px;
+}
+img{
+  height: 60px;
+  width: 60px;
+}
+
+.card{
+  width:160px;
+  
 }
