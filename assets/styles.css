@@ -108,3 +108,6 @@ img{
   width:160px;
   
 }
+.touch{
+  cursor: pointer;
+}

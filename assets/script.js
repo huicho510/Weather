@@ -6,7 +6,7 @@ const cities = ["Sacramento", "New York"];
 $("body").on("click", ".touch", function (event) {
   event.preventDefault();
   var cityName = $(this).text();
-  search();
+  
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
