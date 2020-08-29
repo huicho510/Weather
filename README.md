@@ -1,29 +1,34 @@
 # Weather
 
-Awesome Weather Dashboard
-
+A weather dashboard which displays current weather and forecast for a searched city. Users can search for a city, and if found the app will return the current weather, as well as a forecast of the next 5 days. The user's search history is saved as a button for them to quickly check the weather of that city again.
 
 
 ## Table of Contents
 
-- [Name](#Weather Dashboard)
-- [Description](#Description)
-- [instructions](instructions)
-- [Support](#support)
-- [Contributing](#contributing)
+* [About](#About)
+* [Technologies](#Technologies)
+* [Screenshot](#Screenshot)
 
-## Description
+## About
 
-A weather dashboard that gives you todays weather as well as a 5 day forecast. In addition, it provides a color coded uv index.
+Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. With that in mind, I created this project.
 
-## instructions
 
-type in a city name and the weather will appear to the right of the page.
+## Technologies
 
-## Support
+### Backend technologies
+* Javascript
+* Ajax
+* OpenWeather API
 
-Please [open an issue](https://github.com/fraction/readme-boilerplate/issues/new) for support.
+### Frontend technologies
 
-## Contributing
+* HTML
+* CSS
+* Bootstrap (http://getbootstrap.com/)
+* Javascript
+* jQuery (https://jquery.com/)
 
-Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/fraction/readme-boilerplate/compare/).
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/59625096/91643848-b024a780-e9eb-11ea-9e8a-d9e6a7895a95.png)
