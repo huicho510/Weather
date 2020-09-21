@@ -39,7 +39,7 @@ ul li {
   background-color: #f6f6f6;
   padding: 12px;
 }
-input[type="text"] {
+input {
   margin-top: 5px;
   margin-left: 5px;
   padding: 6px;
@@ -50,7 +50,7 @@ input[type="text"] {
   clear: left;
   border: none;
   border-radius: 20px;
- 
+
 }
 button {
   border-radius: 5px;
