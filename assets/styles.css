@@ -20,9 +20,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
-  color: black;
-  
+  color: black; 
 }
+
+#info:hover{
+  background-color: #444;
+  color:white;
+}
+
 #city {
   margin-top: 40px;
   margin-left: 5px;
