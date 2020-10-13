@@ -5,7 +5,7 @@ let APIKey = "166a433c57516f51dfab1f7edaed8413";
 $("body").on("click", ".touch", (event) => {
   event.preventDefault();
   let cityName = $(this).text();
-  
+
   let queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
@@ -42,7 +42,7 @@ $("body").on("click", ".touch", (event) => {
   });
 });
 
-function search() {
+search = () => {
   $("#save").on("click", function (event) {
     event.preventDefault();
     let cityName = $("#newItem").val();
@@ -70,7 +70,6 @@ function search() {
         "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
       const imgEl = $("<img>").attr("src", img);
       $("#info").append(imgEl);
-      console.log(img);
 
       localStorage.setItem(cityName, JSON.stringify(queryURL));
 
@@ -81,9 +80,9 @@ function search() {
       uvIndex(lon, lat);
       getForecast(cityName);
     });
-    $('#newItem').val('');
+    $("#newItem").val("");
   });
-}
+};
 // function addCity() {
 //   $("#newItem").keyup(function (e) {
 //     // let code = e.which;
@@ -93,11 +92,11 @@ function search() {
 //     // }
 //   });
 // }
-function myFunction() {
+myFunction = () => {
   savBtn.keyup = $("ul").append("<li class= touch>" + textIn.value + "</li>");
-}
+};
 
-function getForecast(cityName) {
+getForecast = (cityName) => {
   let weeklyUrl =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityName +
@@ -143,15 +142,13 @@ function getForecast(cityName) {
       $("#week .row").append(colEl);
     }
   });
-}
+};
 
-function uvIndex(lon, lat) {
+uvIndex = (lon, lat) => {
   let indexURL =
     "https://api.openweathermap.org/data/2.5/uvi?appid=8c9bb7e0eeb10862d148cd62de471c05&lat=";
 
   let indexSearch = indexURL + lat + "&lon=" + lon;
-  console.log(indexSearch);
-
   $.ajax({
     url: indexSearch,
     method: "GET",
@@ -163,20 +160,20 @@ function uvIndex(lon, lat) {
     $("#info").append(uvBtn);
 
     if (uv < 3) {
-      alert("It's a beautiful Day!")
+      alert("It's a beautiful Day!");
       uvBtn.attr("class", "green");
     } else if (uv < 6) {
-      ("Perfect day to be out in the Sun!")
+      alert("Perfect day to be out in the Sun!");
       uvBtn.attr("class", "yellow");
     } else if (uv < 8) {
-      alert("Put on some Sun block!")
+      alert("Put on some Sun block!");
       uvBtn.attr("class", "orange");
     } else if (uv < 11) {
-      alert("Put on some Sun block and try to stay in the shade!")
+      alert("Put on some Sun block and try to stay in the shade!");
       uvBtn.attr("class", "red");
     }
   });
-}
+};
 
 savBtn.addEventListener("click", myFunction);
 search();
