@@ -28,9 +28,6 @@ $("body").on("click", ".touch", (event) => {
     $("#info").append("<li>Temperature: " + tempF.toFixed(2) + "(F)</li>");
     const img =
       "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-    const imgEl = $("<img>").attr("src", img);
-    $("#info").append(imgEl);
-    console.log(img);
 
     localStorage.setItem(cityName, JSON.stringify(queryURL));
     let lon = response.coord.lon;
@@ -160,17 +157,17 @@ uvIndex = (lon, lat) => {
     $("#info").append(uvBtn);
 
     if (uv < 3) {
-      alert("It's a beautiful Day!");
       uvBtn.attr("class", "green");
+      alert("It's a beautiful Day!");
     } else if (uv < 6) {
-      alert("Perfect day to be out in the Sun!");
       uvBtn.attr("class", "yellow");
-    } else if (uv < 8) {
-      alert("Put on some Sun block!");
+      alert("Perfect day to be out in the Sun!");
+    } else if (uv < 8) { 
       uvBtn.attr("class", "orange");
+      alert("Put on some Sun block!");
     } else if (uv < 11) {
-      alert("Put on some Sun block and try to stay in the shade!");
       uvBtn.attr("class", "red");
+      alert("Put on some Sun block and try to stay in the shade!");
     }
   });
 };
