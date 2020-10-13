@@ -1,13 +1,13 @@
 let savBtn = document.getElementById("save");
 let textIn = document.getElementById("newItem");
-var APIKey = "166a433c57516f51dfab1f7edaed8413";
-const cities = ["Sacramento", "New York"];
+let APIKey = "166a433c57516f51dfab1f7edaed8413";
+
 
 $("body").on("click", ".touch", function (event) {
   event.preventDefault();
-  var cityName = $(this).text();
+  let cityName = $(this).text();
   
-  var queryURL =
+  let queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
     "&appid=" +
@@ -24,7 +24,7 @@ $("body").on("click", ".touch", function (event) {
     $("#info").append("<li> Wind Speed: " + response.wind.speed + "</li>");
     $("#info").append("<li> Humidity: " + response.main.humidity + "</li>");
 
-    var tempF = (response.main.temp - 273.15) * 1.8 + 32;
+    let tempF = (response.main.temp - 273.15) * 1.8 + 32;
 
     $("#info").append("<li>Temperature: " + tempF.toFixed(2) + "(F)</li>");
     const img =
@@ -34,8 +34,8 @@ $("body").on("click", ".touch", function (event) {
     console.log(img);
 
     localStorage.setItem(cityName, JSON.stringify(queryURL));
-    var lon = response.coord.lon;
-    var lat = response.coord.lat;
+    let lon = response.coord.lon;
+    let lat = response.coord.lat;
 
     // SEND OVER TO uvIndex()
     uvIndex(lon, lat);
@@ -46,8 +46,8 @@ $("body").on("click", ".touch", function (event) {
 function search() {
   $("#save").on("click", function (event) {
     event.preventDefault();
-    var cityName = $("#newItem").val();
-    var queryURL =
+    let cityName = $("#newItem").val();
+    let queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       cityName +
       "&appid=" +
@@ -64,7 +64,7 @@ function search() {
       $("#info").append("<li> Wind Speed: " + response.wind.speed + "</li>");
       $("#info").append("<li> Humidity: " + response.main.humidity + "</li>");
 
-      var tempF = (response.main.temp - 273.15) * 1.8 + 32;
+      let tempF = (response.main.temp - 273.15) * 1.8 + 32;
 
       $("#info").append("<li>Temperature: " + tempF.toFixed(2) + "(F)</li>");
       const img =
@@ -88,7 +88,7 @@ function search() {
 
 function addCity() {
   $("#newItem").keyup(function (e) {
-    var code = e.which;
+    let code = e.which;
     if (code == 13) {
       e.preventDefault();
       $("ul").append("<li>" + e.target.value + "</li>"); // new hw might be useful
@@ -101,7 +101,7 @@ function myFunction() {
 }
 
 function getForecast(cityName) {
-  var weeklyUrl =
+  let weeklyUrl =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityName +
     "&appid=" +
@@ -149,20 +149,20 @@ function getForecast(cityName) {
 }
 
 function uvIndex(lon, lat) {
-  var indexURL =
+  let indexURL =
     "https://api.openweathermap.org/data/2.5/uvi?appid=8c9bb7e0eeb10862d148cd62de471c05&lat=";
 
-  var indexSearch = indexURL + lat + "&lon=" + lon;
+  let indexSearch = indexURL + lat + "&lon=" + lon;
   console.log(indexSearch);
 
   $.ajax({
     url: indexSearch,
     method: "GET",
   }).then(function (response) {
-    var uv = response.value;
+    let uv = response.value;
 
     $("#info").append("UV Index: ");
-    var uvBtn = $("<button>").text(uv);
+    let uvBtn = $("<button>").text(uv);
     $("#info").append(uvBtn);
 
     if (uv < 3) {
