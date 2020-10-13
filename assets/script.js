@@ -3,7 +3,7 @@ let textIn = document.getElementById("newItem");
 let APIKey = "166a433c57516f51dfab1f7edaed8413";
 
 
-$("body").on("click", ".touch", function (event) {
+$("body").on("click", ".touch", (event) => {
   event.preventDefault();
   let cityName = $(this).text();
   
@@ -75,8 +75,8 @@ function search() {
 
       localStorage.setItem(cityName, JSON.stringify(queryURL));
 
-      var lon = response.coord.lon;
-      var lat = response.coord.lat;
+      let lon = response.coord.lon;
+      let lat = response.coord.lat;
 
       // SEND OVER TO uvIndex()
       uvIndex(lon, lat);
@@ -86,15 +86,15 @@ function search() {
   });
 }
 
-function addCity() {
-  $("#newItem").keyup(function (e) {
-    let code = e.which;
-    if (code == 13) {
-      e.preventDefault();
-      $("ul").append("<li>" + e.target.value + "</li>"); // new hw might be useful
-    }
-  });
-}
+// function addCity() {
+//   $("#newItem").keyup(function (e) {
+//     // let code = e.which;
+//     // if (code == 13) {
+//     //   e.preventDefault();
+//     //   $("ul").append("<li>" + e.target.value + "</li>"); // no longer needed but Will leave for reference
+//     // }
+//   });
+// }
 
 function myFunction() {
   savBtn.keyup = $("ul").append("<li class= touch>" + textIn.value + "</li>");
@@ -115,7 +115,7 @@ function getForecast(cityName) {
       .html('<h4 "mt-3">5-Day Forecast: </h4>')
       .append('<div class="row ">');
 
-    for (var i = 0; i < response.list.length; i += 8) {
+    for (let i = 0; i < response.list.length; i += 8) {
       const colEl = $("<div>").addClass("col-md-2");
 
       const cardEl = $("<div>").addClass("card bg-primary text-white");
@@ -177,6 +177,5 @@ function uvIndex(lon, lat) {
   });
 }
 
-addCity();
 savBtn.addEventListener("click", myFunction);
 search();
