@@ -2,7 +2,6 @@ let savBtn = document.getElementById("save");
 let textIn = document.getElementById("newItem");
 let APIKey = "166a433c57516f51dfab1f7edaed8413";
 
-
 $("body").on("click", ".touch", (event) => {
   event.preventDefault();
   let cityName = $(this).text();
@@ -85,7 +84,6 @@ function search() {
     $('#newItem').val('');
   });
 }
-
 // function addCity() {
 //   $("#newItem").keyup(function (e) {
 //     // let code = e.which;
@@ -95,7 +93,6 @@ function search() {
 //     // }
 //   });
 // }
-
 function myFunction() {
   savBtn.keyup = $("ul").append("<li class= touch>" + textIn.value + "</li>");
 }
@@ -166,12 +163,16 @@ function uvIndex(lon, lat) {
     $("#info").append(uvBtn);
 
     if (uv < 3) {
+      alert("It's a beautiful Day!")
       uvBtn.attr("class", "green");
     } else if (uv < 6) {
+      ("Perfect day to be out in the Sun!")
       uvBtn.attr("class", "yellow");
     } else if (uv < 8) {
+      alert("Put on some Sun block!")
       uvBtn.attr("class", "orange");
     } else if (uv < 11) {
+      alert("Put on some Sun block and try to stay in the shade!")
       uvBtn.attr("class", "red");
     }
   });
